@@ -131,6 +131,12 @@ cat3.products.create!({
   quantity: 23,
   price: 2_483.75
 })
-
+x=Product.first()
+x.reviews.create!({
+  product_id: x.id,
+  user_id: 12,
+  description: "This product is awful",
+  rating: 0
+})
 
 puts "DONE!"

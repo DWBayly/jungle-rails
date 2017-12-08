@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+  post '/products/:product_id/reviews' => 'reviews#create'
   namespace :admin do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
