@@ -1,0 +1,15 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    Price:
+      <%= @order.total_cents%>
+       <% @order.line_items.each do |item| %>
+          <% @prod = Product.find(item.product_id)%>
+          <li><%=@prod.inspect%></li>
+        <%end%>
+  </body>
+</html>
