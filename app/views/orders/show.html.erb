@@ -1,13 +1,61 @@
 <section class="orders-show">
 
   <header class="page-header">
-    <h1>Order #<%= @order.id %></h1>
+    <h1>Order #<%= @order.id %>for <%=@order.email%></h1>
   </header>
 
-  <div class="order-summary jumbotron">
-    <h4>Thank you for your order!</h4>
+  <div class="panel panel-default products">
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">Product</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div class="table table-bordered">
+        <% @order.line_items.each do |item| %>
+          <% @prod = Product.find(item.product_id)%>
+          <tr>
+            <td>
+              <%= image_tag @prod.image.tiny %>
+            </td>
+            <td>
+              <h4><%= @prod.name %></h4>
+              <br>
+              <p><%= @prod.description %></p>
+            </td>
+            <td>
+              <%= @prod.category.name %>
+            </td>
+            <td>
+              <%= @prod.price %>
+            </td>
+            <td>
+              <%= item.quantity %>
+            </td>
+          </tr>
+        <% end %>
+       </div>
+       <tfoot>
+        <tr>
+          <th colspan="4">
+            TOTAL:
+          </th>
+          <th>
+            $<%= @order.total_cents/100 %>.<%= @order.total_cents%100 %>
+          </th>
+        </tr>
+      </tfoot>
+    </tbody>
+    </table>
+
   </div>
 
+ <div class="well">
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
-
+</div>
 </section>
