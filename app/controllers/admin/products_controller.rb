@@ -33,7 +33,8 @@ class Admin::ProductsController < ApplicationController
       :category_id,
       :quantity,
       :image,
-      :price
+      :price,
+      :reviews
     )
   end
 

@@ -25,9 +25,25 @@
         </dl>
       </div>
     </div>
-
-  </article>
-  <div>
-    <%=@product.reviews.first.inspect%>
+    <h3>Reviews</h3>
+    <% @product.reviews.each do |review| %>
+      <h4>Description</h4>
+      <%= review.description%>
+      <div>Rating:<%= review.rating%></div>
+    <%end%>
+    <h3>Write your own!</h3>
+    <%= form_for([@product, @review]) do |f| %>
+      <div class="field">
+        <%= f.label :description %><br>
+        <%= f.text_field :description %><br>
+        <%= f.label :rating %><br>
+        <%= f.select :rating, [0,1,2,3,4,5] %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+<% end %>
+    </div>
   </div>
+  </article>
 </section>

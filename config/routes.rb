@@ -17,6 +17,12 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
   post '/products/:product_id/reviews' => 'reviews#create'
+  resources :products, only: [:index, :show] do
+    resources :reviews, only: [:create]
+  end
+  resources :puppies, only: [:destroy]
+
+
   namespace :admin do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]

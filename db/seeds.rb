@@ -138,5 +138,11 @@ x.reviews.create!({
   description: "This product is awful",
   rating: 0
 })
+x.reviews.create!({
+  product_id: x.id,
+  user_id: 12,
+  description: "This product is medeocre",
+  rating: 3
+})
 
 puts "DONE!"
