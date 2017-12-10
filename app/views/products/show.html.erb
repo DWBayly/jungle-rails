@@ -26,10 +26,11 @@
       </div>
     </div>
     <h3>Reviews</h3>
-    <% @product.reviews.each do |review| %>
+    <% @product.reviews.order(:created_at).each do |review| %>
       <h4>Description</h4>
       <%= review.description%>
-      <div>Rating:<%= review.rating%></div>
+      <div>Rating:<%= review.rating%></div><br>
+      <div>Time Created:<%= review.created_at%> </div>
     <%end%>
     <h3>Write your own!</h3>
     <%= form_for([@product, @review]) do |f| %>
