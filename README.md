@@ -1,3 +1,10 @@
+NOTES: 
+-Emails dont seem to be sending. Mailer does generate an email message and says its sent out, but I have yet to recieve one. 
+-Login page is unstyled
+-Users cannot delete thier own reviews, though reviews are tied to users. 
+
+
+
 # Jungle
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
@@ -26,3 +33,5 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+
+
