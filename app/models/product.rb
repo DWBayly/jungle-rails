@@ -9,5 +9,7 @@ class Product < ActiveRecord::Base
   validates :price, presence: true
   validates :quantity, presence: true
   validates :category, presence: true
-
+  def is_sold_out
+    self.quantity==0
+  end
 end

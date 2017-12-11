@@ -6,10 +6,12 @@
   </head>
   <body>
     Price:
-      <%= @order.total_cents%>
+      $<%= @order.total_cent/100 %>.<%=@order.total_cent%100%>
        <% @order.line_items.each do |item| %>
           <% @prod = Product.find(item.product_id)%>
-          <li><%=@prod.inspect%></li>
+          <li>Product name<%=@prod.name%></li>
+          <li>Price<%=@prod.price%></li>
+          <li>Quanitity<%=@prod.Quanitity%></li>
         <%end%>
   </body>
 </html>
