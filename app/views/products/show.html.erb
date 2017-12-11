@@ -32,6 +32,7 @@
       <div>Rating:<%= review.rating%></div><br>
       <div>Time Created:<%= review.created_at%> </div>
     <%end%>
+    <%if current_user%>
     <h3>Write your own!</h3>
     <%= form_for([@product, @review]) do |f| %>
       <div class="field">
@@ -44,6 +45,7 @@
         <%= f.submit %>
       </div>
 <% end %>
+<%end%>
     </div>
   </div>
   </article>
