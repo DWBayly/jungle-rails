@@ -1,6 +1,8 @@
 NOTES: 
 -Emails dont seem to be sending. Mailer does generate an email message and says its sent out, but I have yet to recieve one. 
+
 -Login page is unstyled
+
 -Users cannot delete thier own reviews, though reviews are tied to users. 
 
 
