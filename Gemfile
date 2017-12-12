@@ -45,7 +45,10 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.5'
-   gem 'shoulda-matchers', '~> 3.0', require: false
+  gem 'shoulda-matchers', '~> 3.0', require: false
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'database_cleaner'
 end
 
 group :development do

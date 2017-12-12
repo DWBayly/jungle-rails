@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
   post '/products/:product_id/reviews' => 'reviews#create'
+  delete '/products/:product_id/reviews' => 'reviews#destroy'
   resources :products, only: [:index, :show] do
     resources :reviews, only: [:create]
   end

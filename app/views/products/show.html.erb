@@ -22,6 +22,7 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
+
         </dl>
       </div>
     </div>
@@ -31,6 +32,9 @@
       <%= review.description%>
       <div>Rating:<%= review.rating%></div><br>
       <div>Time Created:<%= review.created_at%> </div>
+      <%if review.user_id == session[:user_id]%>
+            <%= link_to fa_icon('trash'), product_reviews_url(@product,review), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+      <%end%>
     <%end%>
     <%if current_user%>
     <h3>Write your own!</h3>
@@ -40,6 +44,7 @@
         <%= f.text_field :description %><br>
         <%= f.label :rating %><br>
         <%= f.select :rating, [0,1,2,3,4,5] %>
+
       </div>
       <div class="actions">
         <%= f.submit %>
