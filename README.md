@@ -5,6 +5,11 @@ NOTES:
 
 -Users cannot delete thier own reviews, though reviews are tied to users. 
 
+In order to access the admin section, add 
+ADMIN_NAME=username
+ADMIN_PASS=password
+
+to your .env file
 
 
 # Jungle
